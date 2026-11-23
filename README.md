@@ -10,7 +10,8 @@ Landing page estática (HTML/CSS/JS, sem build) — ADS BR.
 - `vercel.json` — cleanUrls (/redirect, /dashboard), cache e noindex
 
 Supabase: projeto ADS BR CLIENTES (tabelas `lp_visits`, `lp_leads`, acesso via `lp_acessos`).
-Deploy: Vercel (projeto `lp-oliveira-barbosa`, time ADS BR), a cada push na `main`.
+Deploy: Vercel — projeto `lp-oliveira-barbosa` (prj_5hlgEHIGPWnzDHAa6c8lZmTcApnQ, time ADS BR), produção a cada push na `main`.
+URL: https://lp-oliveira-barbosa.vercel.app (LP) · /redirect · /dashboard (leads)
 # LP Superendividamento — Oliveira e Barbosa Advogados
 
 HTML/CSS/JS puro, sem build. Sobe direto no Vercel (vercel.json com cleanUrls → /redirect e /politica-de-privacidade).
