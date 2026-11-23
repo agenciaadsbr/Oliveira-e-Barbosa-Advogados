@@ -4,9 +4,11 @@ Landing page estática (HTML/CSS/JS, sem build) — ADS BR.
 
 - `index.html` — LP Superendividamento / Direito Bancário (site `oliveira-barbosa-bancario`)
 - `redirect.html` — obrigado → WhatsApp (abre em ~3 s com mensagem de superendividamento)
-- `dashboard.html` — painel de leads (login Supabase, usuário `admin`)
+- `salario-maternidade.html` — LP Salário-maternidade / Previdenciário em `/salario-maternidade` (site `oliveira-barbosa-maternidade`)
+- `redirect-salario-maternidade.html` — obrigado → WhatsApp (mensagem de salário-maternidade)
+- `dashboard.html` — painel de leads das duas LPs (login Supabase, usuário `admin`)
 - `politica-de-privacidade.html`
-- `assets/lp.js` — configuração (WhatsApp, Pixel, Supabase) + UTMs, eventos e registro de visitas/leads
+- `assets/lp.js` — configuração (WhatsApp, Pixel, Supabase) + UTMs, eventos e registro de visitas/leads; cada página pode sobrescrever com `window.OB_PAGE`
 - `vercel.json` — cleanUrls (/redirect, /dashboard), cache e noindex
 
 Supabase: projeto ADS BR CLIENTES (tabelas `lp_visits`, `lp_leads`, acesso via `lp_acessos`).
@@ -37,4 +39,5 @@ Logos oficiais enviados pelo escritório, recortados e otimizados:
 
 ## Fotos
 Fotos do Freepik baixadas pela conta Magnific da agência (versões licenciadas, sem marca d'água):
-hero 12652329 · rotina 11162373 · aposentado 353430881 · assalariado 36291412.
+hero 12652329 · rotina 11162373 · aposentado 353430881 · assalariado 36291412 ·
+mat-hero 11622224 · mat-trabalho 25630321 · mat-casa 11554333 · mat-docs 11193306.

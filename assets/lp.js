@@ -29,7 +29,8 @@ window.OB_CONFIG = {
   // Painel de leads (Supabase "ADS BR CLIENTES" — mesmo padrão das demais LPs ADS BR).
   // A chave anon é pública por design; a leitura exige login e é protegida por RLS.
   site: 'oliveira-barbosa-bancario',
-  sites: ['oliveira-barbosa-bancario'],
+  // todas as LPs do escritório exibidas no painel /dashboard
+  sites: ['oliveira-barbosa-bancario', 'oliveira-barbosa-maternidade'],
   cliente: 'Oliveira & Barbosa Advogados',
   supabaseUrl: 'https://qxhnjzyhtllmtdrcyygi.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4aG5qenlodGxsbXRkcmN5eWdpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMzczNjgsImV4cCI6MjA5NzgxMzM2OH0.DWf4I_x9F--H7ZZHUt_n4V3B__Nlsf1jNZdUV0vNBLU',
@@ -38,6 +39,10 @@ window.OB_CONFIG = {
   redirectPath: 'redirect.html',
   redirectDelayMs: 3000
 };
+
+// Cada página pode sobrescrever a configuração definindo window.OB_PAGE antes deste arquivo
+// (ex.: salario-maternidade.html usa outro site, área, mensagem e redirect).
+if (window.OB_PAGE) Object.assign(window.OB_CONFIG, window.OB_PAGE);
 
 (function () {
   var C = window.OB_CONFIG;

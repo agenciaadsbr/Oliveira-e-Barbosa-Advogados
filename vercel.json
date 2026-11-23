@@ -37,6 +37,15 @@
           "value": "noindex"
         }
       ]
+    },
+    {
+      "source": "/redirect-salario-maternidade",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }
