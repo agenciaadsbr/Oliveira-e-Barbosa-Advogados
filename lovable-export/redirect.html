@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abrindo o WhatsApp | Oliveira e Barbosa Advogados</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#041D45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script>window.OB_NO_VISIT = true;</script>
+<script src="lp-assets/lp.js"></script>
+<style>
+:root{color-scheme:light;--navy:#041D45;--gold:#A3C2F8}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100dvh;display:grid;place-items:center;background:var(--navy);color:#fff;font:17px/1.55 "Montserrat",system-ui,sans-serif;padding:24px;
+  background-image:repeating-linear-gradient(180deg,transparent 0 47px,rgba(255,255,255,.035) 47px 48px)}
+.box{width:min(460px,100%);text-align:center}
+.mk{display:flex;justify-content:center;margin:0 auto 30px}
+.mk img{height:54px;width:auto}
+h1{font:700 clamp(26px,5vw,34px)/1.15 "Montserrat",system-ui,sans-serif;margin:0;text-wrap:balance}
+p{color:#C9D3E6;margin:14px 0 0}
+.ring{position:relative;width:96px;height:96px;margin:34px auto 6px}
+.ring svg{width:96px;height:96px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:6}
+.ring .bg{stroke:rgba(255,255,255,.12)}
+.ring .fg{stroke:var(--gold);stroke-linecap:round;stroke-dasharray:276.5;stroke-dashoffset:276.5;animation:fill var(--t,3s) linear forwards}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font:700 30px/1 "Montserrat",system-ui,sans-serif}
+@keyframes fill{to{stroke-dashoffset:0}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 28px;margin-top:28px;border-radius:999px;background:#25D366;color:#06260f;font-weight:600;text-decoration:none;font-size:17px}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn svg{width:22px;height:22px}
+small{display:block;margin-top:22px;color:#8FA2C2;font-size:14px}
+@media(prefers-reduced-motion:reduce){.ring .fg{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<main class="box">
+  <div class="mk" aria-hidden="true"><img src="lp-assets/logo-branco.webp" alt="Oliveira &amp; Barbosa Advogados" width="436" height="132"></div>
+  <h1 id="title">Recebemos seu contato.</h1>
+  <p>Estamos abrindo o WhatsApp da nossa equipe para você contar, com calma, o que está acontecendo.</p>
+  <div class="ring" aria-hidden="true"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" cx="50" cy="50" r="44"/></svg><b id="sec">3</b></div>
+  <a class="btn" id="go" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Abrir o WhatsApp agora</a>
+  <small>Se o WhatsApp não abrir sozinho, toque no botão acima.<br>Oliveira e Barbosa Advogados · OAB/RN 19.867 · OAB/RN 20.269</small>
+</main>
+<script>
+{
+  const C = window.OB_CONFIG || {};
+  const url = window.OB_whatsUrl ? window.OB_whatsUrl() : '#';
+  const go = document.getElementById('go');
+  go.href = url;
+
+  let nome = '';
+  try { nome = sessionStorage.getItem('ob_lead_nome') || ''; } catch (e) {}
+  if (nome) document.getElementById('title').textContent = 'Obrigado, ' + nome + '. Recebemos seu contato.';
+
+  const delay = C.redirectDelayMs || 3000;
+  document.documentElement.style.setProperty('--t', delay / 1000 + 's');
+  let left = Math.round(delay / 1000);
+  const sec = document.getElementById('sec');
+  sec.textContent = left;
+  const tick = setInterval(() => { left = Math.max(0, left - 1); sec.textContent = left; }, 1000);
+
+  let fired = false;
+  const open = via => {
+    if (fired) return; fired = true; clearInterval(tick);
+    if (window.OB_track) window.OB_track('Contact', { via: via }, false);
+    window.location.href = url;
+  };
+  go.addEventListener('click', e => { e.preventDefault(); open('botao'); });
+  setTimeout(() => open('automatico'), delay);
+}
+</script>
+</body>
+</html>

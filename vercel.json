@@ -46,6 +46,15 @@
           "value": "noindex"
         }
       ]
+    },
+    {
+      "source": "/lovable-export/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }
