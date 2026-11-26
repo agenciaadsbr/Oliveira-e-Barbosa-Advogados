@@ -93,6 +93,8 @@ if (window.OB_PAGE) Object.assign(window.OB_CONFIG, window.OB_PAGE);
   /* ---------- Meta Pixel ---------- */
   var base = { content_category: C.area, content_name: C.produto, lp: C.lpId };
   window.OB_track = function (event, data, custom, eventID) {
+    // Google Tag Manager / Google Ads: todo evento também vai para o dataLayer (ex.: ob_Lead, ob_Contact)
+    try { (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: 'ob_' + event, event_id: eventID || null }, base, data || {})); } catch (e) {}
     if (!window.fbq) return;
     var payload = Object.assign({}, base, data || {});
     var opts = eventID ? { eventID: eventID } : undefined;
